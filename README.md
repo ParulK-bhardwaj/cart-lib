@@ -1,5 +1,10 @@
 ![workflow](https://github.com/ParulK-bhardwaj/e-commerce-library/actions/workflows/node.js.yml/badge.svg)
 
+[![npm version](https://img.shields.io/npm/v/ecommerce-basics.svg)](https://www.npmjs.com/package/ecommerce-basics)
+[![npm downloads](https://img.shields.io/npm/dt/ecommerce-basics.svg)](https://www.npmjs.com/package/ecommerce-basics)
+
+[ecommerce-basics NPM Library](https://www.npmjs.com/package/ecommerce-basics)
+
 # Ecommerce Basics npm Library
 
 Ecommerce Basics is a lightweight and easy-to-use npm library designed to simplify common e-commerce operations such as cart management, product calculations, and currency formatting. With a focus on simplicity and efficiency, this library provides essential functions to enhance the e-commerce experience in your applications.
