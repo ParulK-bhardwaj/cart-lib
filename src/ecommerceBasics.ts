@@ -5,15 +5,15 @@ interface Product {
     quantity: number;
 }
 
-function calculateTotal(cart: Product[]): number {
+export function calculateTotal(cart: Product[]): number {
     return cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 }
 
-function formatCurrency(amount: number): string {
+export function formatCurrency(amount: number): string {
     return `$${amount.toFixed(2)}`;
 }
 
-function addToCart(cart: Product[], product: Product): void {
+export function addToCart(cart: Product[], product: Product): void {
     const existingProduct = cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
@@ -23,7 +23,7 @@ function addToCart(cart: Product[], product: Product): void {
     }
 }
 
-function removeFromCart(cart: Product[], product: Product): void  {
+export function removeFromCart(cart: Product[], product: Product): void  {
     const existingProduct = cart.find((item) => item.id === product.id);
     // Checking if existingProduct is truthy. If existingProduct is not undefined.
     if (existingProduct) {
@@ -35,20 +35,20 @@ function removeFromCart(cart: Product[], product: Product): void  {
         }
     }
 }
-function removeProductFromCart(cart: Product[], product: Product): void {
+export function removeProductFromCart(cart: Product[], product: Product): void {
     cart.splice(cart.indexOf(product), 1);
 }
 
-function calculateTotalItemCount(cart: Product[]): number {
+export function calculateTotalItemCount(cart: Product[]): number {
     return cart.reduce((count, product) => count + product.quantity, 0);
 }
 
-function clearCart(cart: Product[]): Product[] {
+export function clearCart(cart: Product[]): Product[] {
     cart = [];
     return cart;
 }
 
-async function fetchProducts(apiUrl: string): Promise<Product[] | null> {
+export async function fetchProducts(apiUrl: string): Promise<Product[] | null> {
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -62,12 +62,10 @@ async function fetchProducts(apiUrl: string): Promise<Product[] | null> {
     }
 }
 
-module.exports.calculateTotal = calculateTotal;
-module.exports.formatCurrency = formatCurrency;
-module.exports.addToCart = addToCart;
-module.exports.removeFromCart = removeFromCart;
-module.exports.removeProductFromCart = removeProductFromCart;
-module.exports.calculateTotalItemCount = calculateTotalItemCount;
-module.exports.clearCart = clearCart;
-module.exports.fetchProducts = fetchProducts;
 
+const eCommerceBasics =  {
+    calculateTotal, formatCurrency, addToCart, removeFromCart,
+    removeProductFromCart, calculateTotalItemCount, clearCart, fetchProducts,
+};
+
+export default eCommerceBasics;

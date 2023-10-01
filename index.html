@@ -26,7 +26,7 @@
         <p id="cartTotal">Total: $0.00</p>
     </div>
 
-    <script src="./src/ecommerceBasics.js"></script>
+    <script src="../dist/bundle.js"></script>
     <script>
         const cart = [];
 
@@ -48,8 +48,8 @@
             cartList.innerHTML = '';
 
             // Update cart contents
-            const total = calculateTotal(cart);
-            cartTotal.textContent = `Total: ${formatCurrency(total)}`;
+            const total = eCommerceBasics.calculateTotal(cart);
+            cartTotal.textContent = `Total: ${eCommerceBasics.formatCurrency(total)}`;
 
             cart.forEach((product) => {
                 const cartItem = document.createElement('div');
@@ -59,32 +59,32 @@
                 const decreaseButton = document.createElement('button');
                 decreaseButton.textContent = '-';
                 decreaseButton.addEventListener('click', () => {
-                    removeFromCart(cart, product)
+                    eCommerceBasics.removeFromCart(cart, product)
                     updateCartDisplay(cart);
                 });
 
                 const increaseButton = document.createElement('button');
                 increaseButton.textContent = '+';
                 increaseButton.addEventListener('click', () => {
-                    addToCart(cart,product)
+                    eCommerceBasics.addToCart(cart,product)
                     updateCartDisplay(cart);
                 });
 
                 const removeButton = document.createElement('button');
                 removeButton.textContent = 'Remove';
                 removeButton.addEventListener('click', () => {
-                    removeProductFromCart(cart, product);
+                    eCommerceBasics.removeProductFromCart(cart, product);
                     updateCartDisplay(cart);
                 });
 
-                cartItem.textContent = `${product.title} - Quantity: ${product.quantity} - ${formatCurrency(product.price * product.quantity)}`;
+                cartItem.textContent = `${product.title} - Quantity: ${product.quantity} - ${eCommerceBasics.formatCurrency(product.price * product.quantity)}`;
                 
                 cartItem.appendChild(decreaseButton);
                 cartItem.appendChild(increaseButton);
                 cartItem.appendChild(removeButton);
                 cartList.appendChild(cartItem);
             });
-            const cartItemCount = calculateTotalItemCount(cart);
+            const cartItemCount = eCommerceBasics.calculateTotalItemCount(cart);
             cartItemCountElement.textContent = cartItemCount;
             cartItemCountElement.style.display = cartItemCount > 0 ? 'inline' : 'none';
         }
@@ -94,7 +94,7 @@
 
         async function fetchAndDisplayProductData(apiUrl) {
             try {
-                const productsData = await fetchProducts(apiUrl);
+                const productsData = await eCommerceBasics.fetchProducts(apiUrl);
 
                 if (productsData) {
                     const productListContainer = document.getElementById('productList');
@@ -113,7 +113,7 @@
                         productName.textContent = product.title;
 
                         const productPrice = document.createElement('p');
-                        productPrice.textContent = formatCurrency(product.price);
+                        productPrice.textContent = eCommerceBasics.formatCurrency(product.price);
 
                         const addToCartButton = document.createElement('button');
                         addToCartButton.textContent = 'Add to Cart';
@@ -125,9 +125,8 @@
                                 quantity: 1, // Default quantity is 1 when adding to cart
                             };
 
-                            addToCart(cart, productToAdd);
+                            eCommerceBasics.addToCart(cart, productToAdd);
                             console.log('Added to Cart:', productToAdd);
-                            console.log(cart)
                             updateCartDisplay(cart);
                         });
 

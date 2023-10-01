@@ -27,7 +27,7 @@ e-commerce-basics offers a wide range of features:
 
 ```javascript
 const amount = 252.333334506
-const formattedAmount = formatCurrency(amount);
+const formattedAmount = ecommerce.formatCurrency(amount);
 console.log('Formatted Currency:', formattedAmount); // Output: $252.33
 ```
 
@@ -36,8 +36,8 @@ console.log('Formatted Currency:', formattedAmount); // Output: $252.33
 
 ```javascript
 const cart = [{ id: 1, title: 'Product 1', price: 10, quantity: 2 }];
-const total = calculateTotal(cart);
-console.log('Total Price:', formatCurrency(total)); // Output: $20.00
+const total = ecommerce.calculateTotal(cart);
+console.log('Total Price:', ecommerce.formatCurrency(total)); // Output: $20.00
 ```
 
 ### addToCart(cart, product)
@@ -46,10 +46,10 @@ console.log('Total Price:', formatCurrency(total)); // Output: $20.00
 ```javascript
 const cart = [];
 const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 2 }
-addToCart(cart, productOne);
+ecommerce.addToCart(cart, productOne);
 console.log(cart); // Output: [{ id: 1, title: 'Product 1', price: 10, quantity: 2 }];
 const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
-addToCart(cart, productTwo);
+ecommerce.addToCart(cart, productTwo);
 console.log(cart); 
 /* Output:
     [
@@ -66,12 +66,12 @@ console.log(cart);
 const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 2 }
 const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
 const cart = [productOne, productTwo];
-removeFromCart(cart, productOne);
+ecommerce.removeFromCart(cart, productOne);
 console.log(cart[0]); // Output: [{ id: 1, title: 'Product 1', price: 10, quantity: 1 }];
 console.log(cart[1]); // Output: [{ id: 2, title: 'Product 2', price: 100, quantity: 1 }];
-removeFromCart(cart, productOne);
+ecommerce.removeFromCart(cart, productOne);
 console.log(cart[0]); // Output: [{ id: 2, title: 'Product 2', price: 100, quantity: 1 }];
-removeFromCart(cart, productTwo);
+ecommerce.removeFromCart(cart, productTwo);
 console.log(cart); // Output: []
 ```
 
@@ -82,10 +82,10 @@ console.log(cart); // Output: []
 const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 4 }
 const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
 const cart = [productOne, productTwo];
-removeProductFromCart(cart, productOne);
+ecommerce.removeProductFromCart(cart, productOne);
 console.log(cart); // Output: [{ id: 2, title: 'Product 2', price: 100, quantity: 1 }];
 console.log(cart.length); // Output: 1
-removeProductFromCart(cart, productTwo);
+ecommerce.removeProductFromCart(cart, productTwo);
 console.log(cart.length); // Output: 0
 ```
 
@@ -96,7 +96,7 @@ console.log(cart.length); // Output: 0
 const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 4 }
 const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
 const cart = [productOne, productTwo];
-const itemCount = calculateTotalItemCount(cart)
+const itemCount = ecommerce.calculateTotalItemCount(cart)
 console.log(itemCount); // Output: 5
 ```
 
@@ -107,7 +107,7 @@ console.log(itemCount); // Output: 5
 const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 4 }
 const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
 const cart = [productOne, productTwo];
-const updatedCart = clearCart(cart)
+const updatedCart = ecommerce.clearCart(cart)
 console.log(updatedCart); // Output: []
 ```
 
@@ -115,7 +115,7 @@ console.log(updatedCart); // Output: []
 - Fetch products from an API endpoint. Returns an array of products or null if there's an error.
 ```javascript
 const apiUrl = 'https://example-api.com/products';
-fetchProducts(apiUrl)
+ecommerce.fetchProducts(apiUrl)
     .then(products => {
         console.log('Fetched Products:', products);
     })
