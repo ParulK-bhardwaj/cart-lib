@@ -1,6 +1,6 @@
 const {calculateTotal, formatCurrency, addToCart, removeFromCart, 
     removeProductFromCart, calculateTotalItemCount, clearCart, fetchProducts
-} = require ('../src/index.js')
+} = require ('../src/ecommerceBasics.js')
 
 test('calculateTotal calculates total price of items in the cart', () => {
     const cart = [

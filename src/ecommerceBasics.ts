@@ -1,12 +1,19 @@
-function calculateTotal(cart) {
+interface Product {
+    id: number;
+    title: string;
+    price: number;
+    quantity: number;
+}
+
+function calculateTotal(cart: Product[]): number {
     return cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 }
 
-function formatCurrency(amount) {
+function formatCurrency(amount: number): string {
     return `$${amount.toFixed(2)}`;
 }
 
-function addToCart(cart, product) {
+function addToCart(cart: Product[], product: Product): void {
     const existingProduct = cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
@@ -16,7 +23,7 @@ function addToCart(cart, product) {
     }
 }
 
-function removeFromCart(cart, product) {
+function removeFromCart(cart: Product[], product: Product): void  {
     const existingProduct = cart.find((item) => item.id === product.id);
     // Checking if existingProduct is truthy. If existingProduct is not undefined.
     if (existingProduct) {
@@ -28,20 +35,20 @@ function removeFromCart(cart, product) {
         }
     }
 }
-function removeProductFromCart(cart, product) {
+function removeProductFromCart(cart: Product[], product: Product): void {
     cart.splice(cart.indexOf(product), 1);
 }
 
-function calculateTotalItemCount(cart) {
+function calculateTotalItemCount(cart: Product[]): number {
     return cart.reduce((count, product) => count + product.quantity, 0);
 }
 
-function clearCart(cart) {
+function clearCart(cart: Product[]): Product[] {
     cart = [];
     return cart;
 }
 
-async function fetchProducts(apiUrl) {
+async function fetchProducts(apiUrl: string): Promise<Product[] | null> {
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -55,13 +62,14 @@ async function fetchProducts(apiUrl) {
     }
 }
 
-module.exports.calculateTotal = calculateTotal;
-module.exports.formatCurrency = formatCurrency;
-module.exports.addToCart = addToCart;
-module.exports.removeFromCart = removeFromCart;
-module.exports.removeProductFromCart = removeProductFromCart;
-module.exports.calculateTotalItemCount = calculateTotalItemCount;
-module.exports.clearCart = clearCart;
-module.exports.fetchProducts = fetchProducts;
-
+export {
+    calculateTotal,
+    formatCurrency,
+    addToCart,
+    removeFromCart,
+    removeProductFromCart,
+    calculateTotalItemCount,
+    clearCart,
+    fetchProducts,
+};
 
