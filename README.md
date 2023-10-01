@@ -1,26 +1,26 @@
-![workflow](https://github.com/ParulK-bhardwaj/cart-lib/actions/workflows/node.js.yml/badge.svg)
+![workflow](https://github.com/ParulK-bhardwaj/e-commerce-library/actions/workflows/node.js.yml/badge.svg)
 
-# E-commerce Basics npm Library
+# Ecommerce Basics npm Library
 
-E-commerce Basics is a lightweight and easy-to-use npm library designed to simplify common e-commerce operations such as cart management, product calculations, and currency formatting. With a focus on simplicity and efficiency, this library provides essential functions to enhance the e-commerce experience in your applications.
+Ecommerce Basics is a lightweight and easy-to-use npm library designed to simplify common e-commerce operations such as cart management, product calculations, and currency formatting. With a focus on simplicity and efficiency, this library provides essential functions to enhance the e-commerce experience in your applications.
 
 ## Installation
 
-To start using e-commerce-basics in your JavaScript projects, you can install it via npm:
+To start using ecommerce-basics in your JavaScript projects, you can install it via npm:
 
 ```shell
-npm install e-commerce-basics
+npm install ecommerce-basics
 ```
 
 ## Usage
-Once you have installed e-commerce-basics, you can import the desired functions into your JavaScript code:
+Once you have installed ecommerce-basics, you can import the desired functions into your JavaScript code:
 
 ```javascript
-const ecommerce = require('e-commerce-basics');
+const ecommerce = require('ecommerce-basics');
 ```
 
 ## Features
-e-commerce-basics offers a wide range of features:
+ecommerce-basics offers a wide range of features:
 
 ### formatCurrency(amount)
 - Format a numerical value into a currency format.
@@ -125,7 +125,7 @@ ecommerce.fetchProducts(apiUrl)
 ```
 
 ## Contributing
-I welcome contributions from the community to improve and expand the functionality of e-commerce-basics. If you have any suggestions, bug reports, or feature requests, please don't hesitate to open an issue or submit a pull request on the GitHub repository.
+I welcome contributions from the community to improve and expand the functionality of ecommerce-basics. If you have any suggestions, bug reports, or feature requests, please don't hesitate to open an issue or submit a pull request on the GitHub repository.
 
 ### 
 - The package is intended to be used for educational purposes only.

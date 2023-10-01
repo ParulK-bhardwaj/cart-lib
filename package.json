@@ -1,5 +1,5 @@
 {
-  "name": "e-commerce-lib",
+  "name": "ecommerce-basics",
   "version": "1.0.0",
   "description": "",
   "main": "src/ecommerceBasics.js",
@@ -10,9 +10,20 @@
     "test": "jest",
     "build": "webpack --config webpack.config.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParulK-bhardwaj/e-commerce-library.git "
+  },
+  "keywords": ["ecommerce", "shopping cart", "cart", "fetch products", 
+  "e-commerce website", "e-commerce site", "cart functions", "display products api", 
+  "display products", "add to cart", "remove from cart", "calculate total", "count items", 
+  "fomrat currency", "ecommerce basics", "e-commerce basics"],
+  "author": "Parul Bhardwaj",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParulK-bhardwaj/e-commerce-library/issues"
+  },
+  "homepage": "https://github.com/ParulK-bhardwaj/e-commerce-library#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
