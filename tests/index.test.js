@@ -74,3 +74,40 @@ test('clearCart clears everything from the cart', () => {
     ];
     expect(clearCart(cart)).toHaveLength(0);
 });
+
+// https://dev.to/zsevic/spies-and-mocking-with-jest-21op
+// Mocking fetch function for successful API response
+const mockSuccessResponse = [{ id: 1, title: 'Product 1' }];
+
+const mockJsonPromise = Promise.resolve(mockSuccessResponse);
+const mockFetchPromise = Promise.resolve({
+  ok: true,
+  json: () => mockJsonPromise,
+});
+
+jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
+
+afterEach(() => {
+  global.fetch.mockClear();
+});
+
+test('fetchProducts fetches products data from API', async () => {
+  const apiUrl = 'https://example-api.com/products';
+  const productsData = await fetchProducts(apiUrl);
+  expect(productsData).toEqual(mockSuccessResponse);
+});
+
+test('fetchProducts handles API errors gracefully', async () => {
+  // Mock fetch function for error response
+  global.fetch.mockImplementationOnce(() =>
+    Promise.resolve({
+      ok: false,
+      status: 404,
+      json: () => Promise.resolve({ error: 'Not found' }),
+    })
+  );
+
+  const apiUrl = 'https://example-api.com/non-existing-endpoint';
+  const productsData = await fetchProducts(apiUrl);
+  expect(productsData).toBeNull();
+});

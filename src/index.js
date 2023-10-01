@@ -18,7 +18,7 @@ function addToCart(cart, product) {
 
 function removeFromCart(cart, product) {
     const existingProduct = cart.find((item) => item.id === product.id);
-
+    // Checking if existingProduct is truthy. If existingProduct is not undefined.
     if (existingProduct) {
         existingProduct.quantity -= 1;
 
