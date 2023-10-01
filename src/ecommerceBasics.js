@@ -107,3 +107,10 @@ function fetchProducts(apiUrl) {
     });
 }
 exports.fetchProducts = fetchProducts;
+
+
+const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 4 }
+const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
+const cart = [productOne, productTwo];
+const updatedCart = clearCart(cart)
+console.log(updatedCart); // Output: []
