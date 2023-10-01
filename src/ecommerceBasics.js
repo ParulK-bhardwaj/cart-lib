@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,16 +34,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchProducts = exports.clearCart = exports.calculateTotalItemCount = exports.removeProductFromCart = exports.removeFromCart = exports.addToCart = exports.formatCurrency = exports.calculateTotal = void 0;
 function calculateTotal(cart) {
     return cart.reduce(function (total, product) { return total + (product.price * product.quantity); }, 0);
 }
-exports.calculateTotal = calculateTotal;
 function formatCurrency(amount) {
     return "$".concat(amount.toFixed(2));
 }
-exports.formatCurrency = formatCurrency;
 function addToCart(cart, product) {
     var existingProduct = cart.find(function (item) { return item.id === product.id; });
     if (existingProduct) {
@@ -54,7 +49,6 @@ function addToCart(cart, product) {
         cart.push(product);
     }
 }
-exports.addToCart = addToCart;
 function removeFromCart(cart, product) {
     var existingProduct = cart.find(function (item) { return item.id === product.id; });
     // Checking if existingProduct is truthy. If existingProduct is not undefined.
@@ -66,20 +60,16 @@ function removeFromCart(cart, product) {
         }
     }
 }
-exports.removeFromCart = removeFromCart;
 function removeProductFromCart(cart, product) {
     cart.splice(cart.indexOf(product), 1);
 }
-exports.removeProductFromCart = removeProductFromCart;
 function calculateTotalItemCount(cart) {
     return cart.reduce(function (count, product) { return count + product.quantity; }, 0);
 }
-exports.calculateTotalItemCount = calculateTotalItemCount;
 function clearCart(cart) {
     cart = [];
     return cart;
 }
-exports.clearCart = clearCart;
 function fetchProducts(apiUrl) {
     return __awaiter(this, void 0, void 0, function () {
         var response, productsData, error_1;
@@ -106,11 +96,11 @@ function fetchProducts(apiUrl) {
         });
     });
 }
-exports.fetchProducts = fetchProducts;
-
-
-const productOne = { id: 1, title: 'Product 1', price: 10, quantity: 4 }
-const productTwo = { id: 2, title: 'Product 2', price: 100, quantity: 1 }
-const cart = [productOne, productTwo];
-const updatedCart = clearCart(cart)
-console.log(updatedCart); // Output: []
+module.exports.calculateTotal = calculateTotal;
+module.exports.formatCurrency = formatCurrency;
+module.exports.addToCart = addToCart;
+module.exports.removeFromCart = removeFromCart;
+module.exports.removeProductFromCart = removeProductFromCart;
+module.exports.calculateTotalItemCount = calculateTotalItemCount;
+module.exports.clearCart = clearCart;
+module.exports.fetchProducts = fetchProducts;

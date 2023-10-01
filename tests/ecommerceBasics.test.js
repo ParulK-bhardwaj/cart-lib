@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const {calculateTotal, formatCurrency, addToCart, removeFromCart, 
     removeProductFromCart, calculateTotalItemCount, clearCart, fetchProducts
 } = require ('../src/ecommerceBasics.js')
@@ -7,14 +8,14 @@ test('calculateTotal calculates total price of items in the cart', () => {
         {id: 1, title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', price: 109.95, quantity: 2},
         {id: 2, title: 'Mens Casual Premium Slim Fit T-Shirts ', price: 22.3, quantity: 1}
     ];
-    const expectedTotal = (109.5 * 2) + (22.3 * 1);
-    expect(calculateTotal(cart)).toEqual(242.20000000000002)
+    const expectedTotal = (109.95 * 2) + (22.3 * 1);
+    expect(calculateTotal(cart)).toEqual(expectedTotal)
 });
 
 test('fomartCurrency formats number to currency string', () => {
     const amount = 242.202222222
     const expectedAmount = "$242.20"
-    expect(formatCurrency(amount)).toEqual("$242.20")
+    expect(formatCurrency(amount)).toEqual(expectedAmount)
 });
 
 test('addToCart adds a product object to the cart', () => {

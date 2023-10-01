@@ -62,14 +62,12 @@ async function fetchProducts(apiUrl: string): Promise<Product[] | null> {
     }
 }
 
-export {
-    calculateTotal,
-    formatCurrency,
-    addToCart,
-    removeFromCart,
-    removeProductFromCart,
-    calculateTotalItemCount,
-    clearCart,
-    fetchProducts,
-};
+module.exports.calculateTotal = calculateTotal;
+module.exports.formatCurrency = formatCurrency;
+module.exports.addToCart = addToCart;
+module.exports.removeFromCart = removeFromCart;
+module.exports.removeProductFromCart = removeProductFromCart;
+module.exports.calculateTotalItemCount = calculateTotalItemCount;
+module.exports.clearCart = clearCart;
+module.exports.fetchProducts = fetchProducts;
 
