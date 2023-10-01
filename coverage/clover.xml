@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1696124237262" clover="3.2.0">
+  <project timestamp="1696124237262" name="All files">
+    <metrics statements="31" coveredstatements="28" conditionals="8" coveredconditionals="6" methods="12" coveredmethods="12" elements="51" coveredelements="46" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
+    <file name="index.js" path="/Users/parulbhardwaj/Desktop/ACS-3310-JavaScript-Libraries/e-commerce-lib/src/index.js">
+      <metrics statements="31" coveredstatements="28" conditionals="8" coveredconditionals="6" methods="12" coveredmethods="12"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="22" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="53" count="0" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="63" count="1" type="stmt"/>
+      <line num="64" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

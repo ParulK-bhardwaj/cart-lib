@@ -55,3 +55,13 @@ async function fetchProducts(apiUrl) {
     }
 }
 
+module.exports.calculateTotal = calculateTotal;
+module.exports.formatCurrency = formatCurrency;
+module.exports.addToCart = addToCart;
+module.exports.removeFromCart = removeFromCart;
+module.exports.removeProductFromCart = removeProductFromCart;
+module.exports.calculateTotalItemCount = calculateTotalItemCount;
+module.exports.clearCart = clearCart;
+module.exports.fetchProducts = fetchProducts;
+
+
