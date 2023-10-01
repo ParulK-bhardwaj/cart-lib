@@ -1,4 +1,4 @@
-![workflow](https://https://github.com/ParulK-bhardwaj/cart-lib/actions/workflows/node.js.yml/badge.svg)
+![workflow](https://github.com/ParulK-bhardwaj/cart-lib/actions/workflows/node.js.yml/badge.svg)
 
 # E-commerce Basics npm Library
 
