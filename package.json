@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-basics",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "This JS library is designed to simplify the development of e-commerce websites. It provides essential functionalities for building shopping carts, fetching products, and managing cart operations.",
   "main": "dist/bundle.js",
   "directories": {
