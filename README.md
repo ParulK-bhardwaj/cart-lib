@@ -9,6 +9,14 @@
 
 Ecommerce Basics is a lightweight and easy-to-use npm library designed to simplify common e-commerce operations such as cart management, product calculations, and currency formatting. With a focus on simplicity and efficiency, this library provides essential functions to enhance the e-commerce experience in your applications.
 
+## Demo: 
+There is a demo index.html to show how one can use this npm library:
+
+<img width="1300" alt="Screen Shot 2023-10-04 at 2 37 20 PM" src="https://github.com/ParulK-bhardwaj/e-commerce-library/assets/111934039/89cf7cc8-5247-469e-aa41-18d0298a7fcb">
+
+<img width="1294" alt="Screen Shot 2023-10-04 at 2 38 20 PM" src="https://github.com/ParulK-bhardwaj/e-commerce-library/assets/111934039/99df4324-4761-4825-b2e0-505ee476de46">
+
+
 ## Installation
 
 To start using ecommerce-basics in your JavaScript projects, you can install it via npm:
