@@ -90,7 +90,7 @@
         }
 
         // Example: Sample API to Fetch and display product data
-        const apiUrl = 'https://fakestoreapi.com/products';
+        const apiUrl = 'https://api.escuelajs.co/api/v1/products';
 
         async function fetchAndDisplayProductData(apiUrl) {
             try {
@@ -106,7 +106,8 @@
 
                         const productImage = document.createElement('img');
                         productImage.classList.add('product-image');
-                        productImage.src = product.image;
+                        productImage.src = product.images[0];
+                        // console.log(product.category.image)
                         productImage.alt = product.title;
 
                         const productName = document.createElement('h2');

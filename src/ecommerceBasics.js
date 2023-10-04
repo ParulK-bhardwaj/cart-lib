@@ -1,3 +1,4 @@
+/* eslint-disable no-sparse-arrays */
 /* eslint-disable no-undef */
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -49,7 +50,7 @@ exports.formatCurrency = formatCurrency;
 function addToCart(cart, product) {
     var existingProduct = cart.find(function (item) { return item.id === product.id; });
     if (existingProduct) {
-        existingProduct.quantity += product.quantity;
+        existingProduct.quantity += 1;
     }
     else {
         cart.push(product);
@@ -87,7 +88,6 @@ function fetchProducts(apiUrl) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    // eslint-disable-next-line no-sparse-arrays
                     _a.trys.push([0, 3, , 4]);
                     return [4 /*yield*/, fetch(apiUrl)];
                 case 1:

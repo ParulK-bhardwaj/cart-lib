@@ -42,6 +42,8 @@ test('addToCart increases a product quantity by 1 if the product already exist i
   expect(cart[0].quantity).toEqual(1);
   addToCart(cart, backpack);
   expect(cart[0].quantity).toEqual(2);
+  addToCart(cart, backpack);
+  expect(cart[0].quantity).toEqual(3);
 });
 
 test('removeFromCart removes a product object from the cart', () => {
